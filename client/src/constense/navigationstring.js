@@ -1,0 +1,17 @@
+export default {
+  Home: 'HOME',
+  Animation_Scale: 'ANIMATION-SCALE',
+  Animation_value: 'ANIMATION-VALUE',
+  Animation_Timaing: 'ANIMATION-TIMAING',
+  Animation_Trsolate: 'ANIMATION-TRSOLATE',
+  Animation_FadeInFadeOut: 'ANIMATION-FADEINFADEOUT',
+  PadeIn_PadeOut: 'PadeIn_PadeOut',
+  PadeIn_PadeOut2: 'PadeIn_PadeOut_layoutAnim',
+  penResponder: 'penResponder',
+  PanResponderReset: 'PanResponderReset',
+  Rotate_animation: 'Rotate_animation',
+  LayotAnimation: 'LayotAnimation',
+  Transolate: 'Transolate',
+  UseNativeDriver: 'UseNativeDriver',
+  Weve_hand: 'Weve_hand',
+};
