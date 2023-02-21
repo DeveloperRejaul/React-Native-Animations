@@ -3,7 +3,7 @@ import React from 'react';
 import Animated from 'react-native-reanimated';
 
 export default function Animatedvalue() {
-  Animated.Value(5);
+  // Animated.Value(5);
   //   Animated.ValueXY(5);
 
   // need a value 0 1 2 3 4 5 6 7 8
