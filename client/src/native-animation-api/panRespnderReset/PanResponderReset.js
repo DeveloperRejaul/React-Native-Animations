@@ -11,16 +11,18 @@ const PanResponderReset = () => {
         useNativeDriver: false,
       }),
       onPanResponderRelease: () => {
-        Animated.spring(pan, {
+        Animated.timing(pan, {
           toValue: {x: 0, y: 0},
           useNativeDriver: true,
+          duration: 1000,
         }).start();
       },
 
       onPanResponderTerminate: () => {
-        Animated.spring(pan, {
+        Animated.timing(pan, {
           toValue: {x: 0, y: 0},
           useNativeDriver: true,
+          duration: 1000,
         }).start();
       },
     }),

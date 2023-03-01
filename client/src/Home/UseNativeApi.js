@@ -7,9 +7,9 @@ import {
   Dimensions,
 } from 'react-native';
 import React from 'react';
-import screen from '../../constense/screen.js';
+import screen from '../constense/screen.js';
 
-export default function Home({navigation}) {
+export default function UseNativeApi({navigation}) {
   return (
     <View style={styles.container}>
       <ScrollView>
