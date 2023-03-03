@@ -12,6 +12,7 @@ export default {
   Animation_FadeInFadeOut: 'ANIMATION-FADEINFADEOUT',
   PadeIn_PadeOut: 'PadeIn_PadeOut',
   circulerAnimation: 'circulerAnimation',
+  CerculerProgess1: 'CerculerProgess1',
   PadeIn_PadeOut2: 'PadeIn_PadeOut_layoutAnim',
   penResponder: 'penResponder',
   PanResponderReset: 'PanResponderReset',
@@ -19,6 +20,7 @@ export default {
   LayotAnimation: 'LayotAnimation',
   Transolate: 'Transolate',
   UseNativeDriver: 'UseNativeDriver',
+  AnimationProject: 'AnimationProject',
   Weve_hand: 'Weve_hand',
   PanhandlerContinuos: 'PanhandlerContinuos',
   Speedometer: 'Speedometer',
@@ -42,4 +44,6 @@ export default {
   animatedItemPopup2: 'animatedItemPopup2',
   customScrollView: 'customScrollView',
   customScrollView2: 'customScrollView2',
+  ShareValue: 'ShareValue',
+  GusterEvent: 'GusterEvent',
 };

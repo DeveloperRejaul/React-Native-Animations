@@ -43,21 +43,41 @@ import AnimatedItemPopup1 from '../native-animation-api/animatedItemPopup1/Anima
 import AnimatedItemPopup2 from '../native-animation-api/animatedItemPopup2/AnimatedItemPopup2.js';
 import CustomScrollView from '../native-animation-api/customScrollView/CustomScrollView.js';
 import CustomScrollView2 from '../native-animation-api/customScrollView2/CustomScrollView2.js';
+import WhatappHeader from '../native-animation-api/whatappHeader/WhatappHeader.js';
+import HeaderSearchBar from '../native-animation-api/headerSearchBar/HeaderSearchBar.js';
+import AnimationProject from '../Home/AnimationProject.js';
+import CerculerProgess1 from '../animation-projects/01.CircularProgress/CerculerProgess1.js';
+import ShareValue from '../librarys/react-native-reanimated/01.shareValue/ShareValue.js';
+import GusterEvent from '../librarys/react-native-reanimated/02.handleingGusterEvent/GusterEvent.js';
+import Swiper2 from '../native-animation-api/swiper2/Swiper2.js';
 
 const Stack = createNativeStackNavigator();
 
 export default function Route() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={UseNativeApi}>
+      <Stack.Navigator initialRouteName={navigationstring.UseNativeApi}>
         <Stack.Screen
           name={navigationstring.UseNativeApi}
           component={UseNativeApi}
         />
+        <Stack.Screen
+          name={navigationstring.AnimationProject}
+          component={AnimationProject}
+        />
+        <Stack.Screen
+          name={navigationstring.CerculerProgess1}
+          component={CerculerProgess1}
+        />
+
         <Stack.Screen name={navigationstring.librarys} component={Librarys} />
         <Stack.Screen
           name={navigationstring.Speedometer}
           component={Speedometer}
+        />
+        <Stack.Screen
+          name={navigationstring.ShareValue}
+          component={ShareValue}
         />
         <Stack.Screen
           name={navigationstring.PanhandlerContinuos}
@@ -88,6 +108,10 @@ export default function Route() {
           component={Reanimated}
         />
         <Stack.Screen
+          name={navigationstring.GusterEvent}
+          component={GusterEvent}
+        />
+        <Stack.Screen
           name={navigationstring.scrollAnimatedHeader}
           component={ScrollAnimatedHeader}
         />
@@ -108,6 +132,7 @@ export default function Route() {
           component={Animationtrsolate}
         />
         <Stack.Screen name={navigationstring.swiper1} component={Swiper1} />
+        <Stack.Screen name={navigationstring.swiper2} component={Swiper2} />
         <Stack.Screen name={navigationstring.swiper3} component={Swiper3} />
         <Stack.Screen name={navigationstring.swiper4} component={Swiper4} />
         <Stack.Screen name={navigationstring.swiper5} component={Swiper5} />
@@ -177,11 +202,11 @@ export default function Route() {
         />
         <Stack.Screen
           name={navigationstring.whatappHeader}
-          component={whatappHeader}
+          component={WhatappHeader}
         />
         <Stack.Screen
           name={navigationstring.headerSearchBar}
-          component={headerSearchBar}
+          component={HeaderSearchBar}
         />
         <Stack.Screen
           name={navigationstring.animatedItemPopup1}
