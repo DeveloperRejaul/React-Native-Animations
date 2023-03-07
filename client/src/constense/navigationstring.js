@@ -46,4 +46,6 @@ export default {
   customScrollView2: 'customScrollView2',
   ShareValue: 'ShareValue',
   GusterEvent: 'GusterEvent',
+  slider: 'slider',
+  ImageSlider: 'ImageSlider',
 };

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
 import navigationstring from '../constense/navigationstring.js';
 import Animated_Scale from '../native-animation-api/Animated_scale/Animated_Scale.js';
 import Animatedvalue from '../native-animation-api/Animated.value/Animated.value.js';
@@ -50,6 +49,8 @@ import CerculerProgess1 from '../animation-projects/01.CircularProgress/Cerculer
 import ShareValue from '../librarys/react-native-reanimated/01.shareValue/ShareValue.js';
 import GusterEvent from '../librarys/react-native-reanimated/02.handleingGusterEvent/GusterEvent.js';
 import Swiper2 from '../native-animation-api/swiper2/Swiper2.js';
+import Slider from '../animation-projects/03.card-slider/Slider.js';
+import ImageSlider from '../animation-projects/04.image-slider/ImageSlider.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -61,6 +62,7 @@ export default function Route() {
           name={navigationstring.UseNativeApi}
           component={UseNativeApi}
         />
+        <Stack.Screen name={navigationstring.librarys} component={Librarys} />
         <Stack.Screen
           name={navigationstring.AnimationProject}
           component={AnimationProject}
@@ -70,7 +72,6 @@ export default function Route() {
           component={CerculerProgess1}
         />
 
-        <Stack.Screen name={navigationstring.librarys} component={Librarys} />
         <Stack.Screen
           name={navigationstring.Speedometer}
           component={Speedometer}
@@ -86,6 +87,10 @@ export default function Route() {
         <Stack.Screen
           name={navigationstring.panHandelerDecay}
           component={PanHandelerDecay}
+        />
+        <Stack.Screen
+          name={navigationstring.ImageSlider}
+          component={ImageSlider}
         />
         <Stack.Screen
           name={navigationstring.GesturHandler}
@@ -136,6 +141,7 @@ export default function Route() {
         <Stack.Screen name={navigationstring.swiper3} component={Swiper3} />
         <Stack.Screen name={navigationstring.swiper4} component={Swiper4} />
         <Stack.Screen name={navigationstring.swiper5} component={Swiper5} />
+        <Stack.Screen name={navigationstring.slider} component={Slider} />
         <Stack.Screen
           name={navigationstring.titleScrolling}
           component={TitleScrolling}

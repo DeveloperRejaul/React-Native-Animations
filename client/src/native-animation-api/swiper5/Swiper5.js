@@ -1,88 +1,151 @@
+import React, {useEffect, useRef, useState} from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
   Animated,
   Dimensions,
   ScrollView,
+  StyleSheet,
+  Text,
+  View,
 } from 'react-native';
-import React, {useRef} from 'react';
-const {width} = Dimensions.get('window');
-const DATA = ['brown', 'orange', 'red', 'blue', 'green'];
 
+const {width, height} = Dimensions.get('window');
+const itemWidth = (width / 5) * 4;
+const itemHeight = (height / 3) * 2;
+const padding = (width - itemWidth) / 2;
+const offset = itemWidth;
+
+const data = ['violet', 'indigo', 'blue', 'orange'];
 export default function Swiper5() {
-  const scrollValue = useRef(new Animated.Value(0)).current;
-
+  const [activeIndex, setActiveIndex] = useState({current: 0, previous: null});
+  const scale = useRef(new Animated.Value(0)).current;
+  const scrollX = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    animate();
+  }, []);
+  useEffect(() => {
+    animate();
+  }, [activeIndex]);
+  const animate = () => {
+    scale.setValue(0);
+    Animated.spring(scale, {
+      toValue: 1,
+      useNativeDriver: true,
+      speed: 1,
+      bounciness: 1000,
+    }).start();
+  };
+  const onScroll = e => {
+    const x = e.nativeEvent.contentOffset.x;
+    let newIndex = Math.floor(x / itemWidth + 0.5);
+    if (activeIndex.current != newIndex) {
+      setActiveIndex({current: newIndex, previous: activeIndex.current});
+    }
+  };
   return (
     <View style={styles.container}>
+      {data.map((x, i) => (
+        <Animated.View
+          key={x}
+          style={[
+            styles.bgColor,
+            {
+              zIndex:
+                i == activeIndex.current
+                  ? 0
+                  : i == activeIndex.previous
+                  ? -1
+                  : -2,
+              backgroundColor: x,
+              transform: [{scale: i == activeIndex.current ? scale : 1}],
+            },
+          ]}
+        />
+      ))}
+      <View style={styles.container} />
       <ScrollView
         horizontal
         pagingEnabled
-        decelerationRate={'fast'}
+        decelerationRate="fast"
+        style={{flexGrow: 0}}
+        contentContainerStyle={styles.scrollView}
         showsHorizontalScrollIndicator={false}
+        snapToInterval={offset}
         onScroll={Animated.event(
-          [{nativeEvent: {contentOffset: {x: scrollValue}}}],
-          {useNativeDriver: false},
+          [{nativeEvent: {contentOffset: {x: scrollX}}}],
+          {
+            useNativeDriver: false,
+            listener: onScroll,
+          },
         )}>
-        {DATA.map(x => (
-          <View style={[styles.card, {backgroundColor: x}]} key={x} />
+        {data.map((x, i) => (
+          <Item key={x} data={x} i={i} scrollX={scrollX} />
         ))}
       </ScrollView>
-      <View pointerEvents="none" style={styles.indictorContainer}>
-        {DATA.map((x, i) => (
-          <Indicator x={x} key={x} i={i} scrollValue={scrollValue} />
+      <View style={styles.indicatorContainer}>
+        {data.map((x, i) => (
+          <View
+            key={x}
+            style={[
+              styles.indicator,
+              i == activeIndex.current && {backgroundColor: '#fff'},
+            ]}
+          />
         ))}
       </View>
     </View>
   );
 }
 
-function Indicator({i, scrollValue}) {
-  const translateX = scrollValue.interpolate({
-    inputRange: [-width + i * width, i * width, width + i * width],
-    outputRange: [-20, 0, 20],
+function Item({i, data, scrollX}) {
+  const scale = scrollX.interpolate({
+    inputRange: [-offset + i * offset, i * offset, offset + i * offset],
+    outputRange: [0.9, 1, 0.9],
   });
   return (
-    <View style={styles.indicator}>
-      <Animated.View
-        style={[
-          styles.activeIndicator,
-          {position: 'absolute', transform: [{translateX}]},
-        ]}
-      />
-    </View>
+    <Animated.View style={[styles.item, {transform: [{scale}]}]}>
+      <Text>{data}</Text>
+    </Animated.View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-
-  card: {
-    width: width - 10,
-    height: '100%',
-    marginHorizontal: 5,
-    borderRadius: 5,
+  scrollView: {
+    paddingHorizontal: padding,
+    alignItems: 'center',
+    paddingVertical: 10,
+    zIndex: 1,
   },
-  indictorContainer: {
-    alignSelf: 'center',
+  item: {
+    height: itemHeight,
+    width: itemWidth,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    backgroundColor: '#fff',
+    elevation: 5,
+  },
+  bgColor: {
     position: 'absolute',
-    bottom: 20,
+    height: (height * 3) / 2,
+    width: (height * 3) / 2,
+    borderRadius: height,
+  },
+  indicatorContainer: {
+    flex: 1,
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   indicator: {
     height: 10,
     width: 10,
     borderRadius: 5,
-    backgroundColor: '#00000044',
-    marginHorizontal: 5,
-    overflow: 'hidden',
-  },
-  activeIndicator: {
-    height: 10,
-    width: 10,
-    borderRadius: 5,
-    backgroundColor: '#fff',
+    marginHorizontal: 3,
+    backgroundColor: '#444',
   },
 });
