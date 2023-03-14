@@ -51,13 +51,22 @@ import GusterEvent from '../librarys/react-native-reanimated/02.handleingGusterE
 import Swiper2 from '../native-animation-api/swiper2/Swiper2.js';
 import Slider from '../animation-projects/03.card-slider/Slider.js';
 import ImageSlider from '../animation-projects/04.image-slider/ImageSlider.js';
+import LearnAnimation from '../Home/LearnAnimation.js';
+import Opacity from '../learn-react-native-animation/01.opacity/Opacity.js';
+import LearnTransolate from '../learn-react-native-animation/02.transolate/Transolate.js';
+import Scale from '../learn-react-native-animation/03.Scale/Scale.js';
+import DinamicWidthHeigth from '../learn-react-native-animation/04.width-height/DinamicWidthHeigth.js';
 
 const Stack = createNativeStackNavigator();
 
 export default function Route() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={navigationstring.UseNativeApi}>
+      <Stack.Navigator initialRouteName={navigationstring.LearnAnimation}>
+        <Stack.Screen
+          name={navigationstring.LearnAnimation}
+          component={LearnAnimation}
+        />
         <Stack.Screen
           name={navigationstring.UseNativeApi}
           component={UseNativeApi}
@@ -71,7 +80,16 @@ export default function Route() {
           name={navigationstring.CerculerProgess1}
           component={CerculerProgess1}
         />
-
+        <Stack.Screen name={navigationstring.Opacity} component={Opacity} />
+        <Stack.Screen
+          name={navigationstring.LearnTransolate}
+          component={LearnTransolate}
+        />
+        <Stack.Screen
+          name={navigationstring.DinamicWidthHeigth}
+          component={DinamicWidthHeigth}
+        />
+        <Stack.Screen name={navigationstring.Scale} component={Scale} />
         <Stack.Screen
           name={navigationstring.Speedometer}
           component={Speedometer}

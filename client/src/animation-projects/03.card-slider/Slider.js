@@ -33,7 +33,7 @@ const Item = ({i, scrollX}) => {
     outputRange: [0.9, 1.1, 0.9],
   });
   return (
-    <Animated.View style={[styles.item, {transform: [{scale: scale}]}]}>
+    <Animated.View key={i} style={[styles.item, {transform: [{scale: scale}]}]}>
       <Text style={styles.text}>{'Card :' + i}</Text>
     </Animated.View>
   );

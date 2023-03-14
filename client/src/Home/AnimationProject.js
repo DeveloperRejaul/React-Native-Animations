@@ -15,15 +15,6 @@ export default function AnimationProject({navigation}) {
         <TouchableOpacity style={styles.screenBody}>
           <Text
             style={styles.screen}
-            onPress={() =>
-              navigation.navigate(navigationstring.CerculerProgess1)
-            }>
-            CerculerProgess1
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.screenBody}>
-          <Text
-            style={styles.screen}
             onPress={() => navigation.navigate(navigationstring.slider)}>
             Card Slider
           </Text>
