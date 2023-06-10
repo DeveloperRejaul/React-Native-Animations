@@ -1,0 +1,32 @@
+/**
+ *
+ * Implemting All of this
+ *
+ * ========== 2d ==========
+ * ******** Transolate ********
+ * 1. Transolate
+ * 2. TransolateX
+ * 3. TransolateY
+ *
+ * ******** Scale **********
+ * 1. Scale
+ * 2. ScaleX
+ * 3. ScaleY
+ *
+ * ***********skew********
+ * 1. skew
+ * 2. skewX
+ * 3. skewY
+ *
+ * ******** Project ********
+ * 1. 2d CUBE
+ *
+ * ========== 3d ==========
+ * 1. Transfrom origin
+ * 2. roatateX, roatateY, roatateZ,
+ * 3. praspactive and praspactive-origin
+ * 4. scaleZ, transolateZ
+ * 5. transfrom-style preserce-3d
+ * 6. Project
+ *
+ */
