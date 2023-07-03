@@ -9,6 +9,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Animated,
 } from 'react-native';
 
 const headerHeight = 120;

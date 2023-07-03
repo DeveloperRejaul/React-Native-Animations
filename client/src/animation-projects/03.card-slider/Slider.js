@@ -1,7 +1,7 @@
 import {StyleSheet, ScrollView, Dimensions, Animated, Text} from 'react-native';
 import React, {useRef} from 'react';
 
-const {width} = Dimensions.get('window');
+const {width} = Dimensions.get('screen');
 const cardWidth = (width / 3) * 2;
 const gap = (width - cardWidth) / 7;
 const offset = cardWidth;
