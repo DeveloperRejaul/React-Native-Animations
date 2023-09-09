@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 const AnimatedTypewriterText = ({sentences, delay, speed, style}) => {
   const [animatedText, setAnimatedText] = useState('');
@@ -43,6 +43,7 @@ const AnimatedTypewriterText = ({sentences, delay, speed, style}) => {
       <Text style={styles.text}>{animatedText}</Text>
       {showCursor && <Text style={styles.cursor}>|</Text>}
     </View>
+
   );
 };
 
@@ -51,7 +52,7 @@ const AnimatedTyping = () => {
     <View style={styles.container}>
       <AnimatedTypewriterText
         sentences={[
-          'Hi, I am Aswin.',
+          'Hi, I am Rezaul Karim.',
           'I am a software developer.',
           'I am passionate about coding.',
           'I love learning new technologies.',
@@ -70,6 +71,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor:"#008000ff"
   },
   textContainer: {
     alignItems: 'center',
@@ -78,6 +80,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 18,
     marginBottom: 10,
+    color:"#fff",
+    fontWeight:"bold"
   },
   cursor: {
     fontSize: 18,
