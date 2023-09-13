@@ -49,6 +49,9 @@ const styles = StyleSheet.create({
   item:{
     flexDirection:"row", marginVertical:10, 
   },
-  title:{},
-  dis:{}
+  title:{color:"black", fontWeight:"bold", fontSize:18},
+  dis:{
+    color:"black",
+    fontWeight:"500"
+  }
 });

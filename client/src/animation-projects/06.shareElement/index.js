@@ -8,7 +8,7 @@ export default function ShareElement() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen name="Details" component={DetailsScreen} options={{headerShown:false}}/>
         </Stack.Navigator>
       </NavigationContainer>
     );
