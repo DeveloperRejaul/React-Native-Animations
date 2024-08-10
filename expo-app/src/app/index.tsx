@@ -1,30 +1,26 @@
-import { View , StyleSheet} from 'react-native'
-import React from 'react'
-import * as d3 from 'd3-shape'
-import { Path, Svg } from 'react-native-svg';
+import { View, StyleSheet, Dimensions } from "react-native";
+import React, { useState } from "react";
+import LineSvg from "../components/LineSvg";
+import House from "../components/House";
+import PathSvg from "../components/PathSvg";
+import GSvg from "../components/GSvg";
+import UseSvg from "../components/UseSvg";
+import Use2 from "../components/Use2";
+import AnimateSvg from "../components/AnimateSvg";
 
 export default function index() {
-
-   const path = d3.arc().innerRadius(0).outerRadius(100).startAngle(0).endAngle(Math.PI / 2);
- 
-
   return (
-      <View style={ styles.container}>
-        <Svg height={50} width={50} fill={'red'} >
-            <Path d={path()}/>
-      </Svg>
+    <View style={styles.container}>
+      <AnimateSvg />
     </View>
-  )
+  );
 }
 
-
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingHorizontal: 10,
-        paddingVertical: 10,
-        paddingTop: 25,
-        justifyContent: "center",
-        alignItems:"center"
-    }
-})
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
+  },
+});
