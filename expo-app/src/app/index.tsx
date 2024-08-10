@@ -1,3 +1,4 @@
+
 import { View, StyleSheet, Dimensions } from "react-native";
 import React, { useState } from "react";
 import LineSvg from "../components/LineSvg";
