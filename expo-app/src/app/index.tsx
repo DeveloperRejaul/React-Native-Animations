@@ -2,11 +2,12 @@ import { View, StyleSheet } from "react-native";
 import React from "react";
 import AnimateSvg from "../components/AnimateSvg";
 import LineChart from "../line-chart";
+import Progress from "../progress";
 
 export default function index() {
   return (
     <View style={styles.container}>
-      <LineChart />
+      <Progress />
     </View>
   );
 }
