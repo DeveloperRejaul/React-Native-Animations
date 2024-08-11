@@ -13,7 +13,7 @@ export default function (props: XAxisProps) {
       x={props.x - fontSize.width / 2}
       y={props.y}
       text={props.text}
-      color={"#000000"}
+      color={"#ffffff"}
     />
   );
 }

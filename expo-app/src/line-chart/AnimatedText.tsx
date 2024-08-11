@@ -23,7 +23,7 @@ export default function (props: AnimatedTextProps) {
       <Text
         text={animatedText}
         font={props.font}
-        color={"#000000"}
+        color={"#ffffff"}
         x={textX}
         y={fontSize.height + MARGIN_VERTICAL / 2}
       />

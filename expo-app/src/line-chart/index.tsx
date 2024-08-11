@@ -1,25 +1,9 @@
 import { Text, useWindowDimensions } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { data } from "./data";
-import {
-  clamp,
-  runOnJS,
-  useSharedValue,
-  withTiming,
-} from "react-native-reanimated";
-import { Canvas, Path, Skia, useFont } from "@shopify/react-native-skia";
+import { useSharedValue } from "react-native-reanimated";
+import { useFont } from "@shopify/react-native-skia";
 import roboto from "@/src/assets/fonts/Roboto-Regular.ttf";
-import { DataType, LineChartProps } from "./types";
-import {
-  Gesture,
-  GestureDetector,
-  PanGestureHandlerEventPayload,
-} from "react-native-gesture-handler";
-import { curveBasis, line, scaleLinear, scalePoint } from "d3";
-import { getYForX, parse } from "react-native-redash";
-import Gradient from "./Gradient";
-import Cursor from "./Cursor";
-import XAxisText from "./XAxisText";
 import AnimatedText from "./AnimatedText";
 import LineChartScreen from "./LineChartScreen";
 
@@ -35,7 +19,7 @@ export default function LineChart() {
     <>
       <Text
         style={{
-          color: "#000000",
+          color: "#ffffff",
           fontSize: 28,
           textAlign: "center",
         }}
