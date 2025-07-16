@@ -77,8 +77,8 @@ export default function PieChartIndex(props: PieChartProps) {
   const pieAnimation = useSharedValue(0);
   const selectedSlice = useSharedValue<number | null>(null);
   const fontSize = 17;
-  const font1 = useFont(require("./Roboto_Condensed-Regular.ttf"), fontSize);
-  const font2 = useFont(require("./Roboto-Bold.ttf"), fontSize);
+  const font1 = useFont(require("../../Roboto_Condensed-Regular.ttf"), fontSize);
+  const font2 = useFont(require("../../Roboto-Bold.ttf"), fontSize);
 
   useEffect(() => {
     pieAnimation.value = 0;
